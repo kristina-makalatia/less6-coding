@@ -1,0 +1,102 @@
+/* 1---------- */
+/* box practice with transform and transition */
+.parent-element {
+    width: 400px;
+    height: 400px;
+    background-color: lightblue;
+    position: relative;
+
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 3s; */
+    transition: all 2s linear; 
+}
+.child-element {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transition: all 2s;
+    position: relative;
+}
+.image-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* display: none; */
+    transition: all 2s;
+}
+/* .child-element:hover .image-element {
+    width: 100%;
+} */
+.red-block {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: all 2s;
+}
+.child-element:hover .red-block {
+    /* display: none; */
+    width: 0;
+}
+
+/* hover effects */
+.parent-element:hover {
+    background-color: greenyellow;
+}
+/* .child-element:hover {
+    background-color: aquamarine;
+    transform:translate(-50%,-50%) rotate(0deg);
+} */
+
+/* .parent-element:hover .child-element {
+    background-color: red;
+} */
+
+
+/* 2------keyframe  */
+.car-image {
+    height: 120px;
+    /* position: absolute; */
+
+    /* animation-name: carmove;
+    animation-duration: 7s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear; */
+    animation: carmove2 7s infinite 2s alternate linear;
+}
+.car-animation-block {
+    /* position: relative; */
+    height: 400px;
+}
+
+
+
+/* @keyframes carmove{
+    from {left:0;}
+    to {left:800px;}
+} */
+
+@keyframes carmove2 {
+    from {transform: translate(0,0);}
+    to {transform: translate(800px,200px);}
+}
+
+
+/* bg image */
+.bg-image {
+    background-image: url('../images/image.jpg');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
